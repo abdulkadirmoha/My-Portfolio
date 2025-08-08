@@ -1,0 +1,303 @@
+/* Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f7f7f7;
+  color: #222;
+  margin: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* New: Main content wrapper */
+.content-wrapper {
+  max-width: 1200px; /* Adjust this value as needed */
+  margin: 0 auto;
+  padding: 0 20px; /* Add some padding on the sides for smaller screens */
+}
+
+/* Header */
+.header {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  border-bottom: 1px solid #ddd;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.nav-links a {
+  margin-left: 20px;
+  font-size: 16px;
+  color: #444;
+}
+
+/* Hero */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 60px 40px;
+  gap: 50px;
+  align-items: center;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.profile-card {
+  background-color: #f0e4db;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 320px;
+  flex: 1;
+}
+
+.profile-pic {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.social-icons a {
+  margin: 0 8px;
+  font-size: 20px;
+}
+
+.intro {
+  flex: 2;
+  min-width: 280px;
+}
+
+.intro h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.intro p {
+  margin: 12px 0;
+  line-height: 1.6;
+}
+
+.buttons .btn {
+  display: inline-block;
+  margin: 10px 10px 10px 0;
+  padding: 10px 20px;
+  border: 2px solid #444;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn.green {
+  background: #1b8057;
+  color: white;
+  border-color: #1b8057;
+}
+
+.btn:hover {
+  background: #333;
+  color: white;
+}
+
+/* Projects Sections - General Spacing & Separator */
+.projects-section,
+#web-design-projects {
+  padding: 60px 40px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.projects-section h2,
+#web-design-projects h2 {
+  font-size: 28px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* JavaScript Projects Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+
+/* WordPress/Web Design Projects Container */
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+
+/* Project Cards */
+.project-card {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 1rem;
+  background-color: #fff;
+  text-align: center;
+  transition: transform 0.3s;
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.project-card h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  font-size: 16px;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.project-card a {
+  display: inline-block;
+  padding: 8px 15px;
+  background-color: #1b8057;
+  color: white;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.project-card a:hover {
+  background-color: #156243;
+}
+
+
+/* Skills */
+.skills-section {
+  padding: 60px 40px;
+  background-color: #f9f9f9;
+  text-align: center;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.skills-section h2 {
+  font-size: 28px;
+  margin-bottom: 40px;
+}
+
+.skills-grid-icons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 30px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.skill-icon {
+  background: #ffffff;
+  padding: 20px 10px;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.skill-icon:hover {
+  transform: translateY(-5px);
+}
+
+.skill-icon i {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.skill-icon span {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+
+/* Contact */
+.contact-section {
+  padding: 60px 40px;
+  background-color: #fff;
+  text-align: center;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.contact-section h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.contact-section p {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 30px;
+  font-size: 14px;
+  color: #666;
+  background-color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .logo {
+    font-size: 16px;
+  }
+
+  .projects-section,
+  #web-design-projects,
+  .skills-section,
+  .contact-section {
+    padding: 40px 20px;
+  }
+
+  .projects-grid,
+  .projects-container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
