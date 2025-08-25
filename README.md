@@ -67,7 +67,7 @@ Feel free to connect with me:
 
 * **LinkedIn:** https://www.linkedin.com/in/abdulkadir-mohamed/
 * **Email:** abdulkadir.moha85@gmail.com
-* **Website:** https://github.com/abdulkadirmoha/My-Portfolio
+* **Website:** https://abdulkadirmoha.github.io/My-Portfolio/
 
 ---
 
