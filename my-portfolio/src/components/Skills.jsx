@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef } from "react";
 
 function Skills() {
   const [isVisible, setIsVisible] = useState(false);
@@ -24,43 +24,43 @@ function Skills() {
   const skills = [
     {
       name: "WordPress",
-      icon: "./src/images/wordpress-logo.png",
+      icon: "/images/wordpress-logo.png",
       color: "bg-indigo-50",
       textColor: "text-indigo-700",
     },
     {
       name: "Elementor",
-      icon: "./src/images/elementor.png",
+      icon: "/images/elementor.png",
       color: "bg-purple-400",
       textColor: "text-indigo-900",
     },
     {
       name: "HTML",
-      icon: "./src/images/html.png",
+      icon: "/images/html.png",
       color: "bg-orange-600",
       textColor: "text-black",
     },
     {
       name: "CSS",
-      icon: "./src/images/css-3.png",
+      icon: "/images/css-3.png",
       color: "bg-blue-600",
       textColor: "text-white",
     },
     {
       name: "JavaScript",
-      icon: "./src/images/javascript-logo.png",
+      icon: "/images/javascript-logo.png",
       color: "bg-yellow-500",
       textColor: "text-black",
     },
     {
       name: "Tailwind",
-      icon: "./src/images/tailwindcss.png",
+      icon: "/images/tailwindcss.png",
       color: "bg-blue-700",
       textColor: "text-white",
     },
     {
       name: "React",
-      icon: "./src/./images/react.png",
+      icon: "/images/react.png",
       color: "bg-indigo-900",
       textColor: "text-white",
     },
@@ -84,7 +84,7 @@ function Skills() {
           </p>
         </div>
 
-        {/* Skills Icons Grid - Full Width Single Line */}
+        {/* Skills Icons Grid */}
         <div
           className={`flex flex-wrap justify-center gap-4 w-full transition-all duration-1000 transform ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
@@ -95,21 +95,17 @@ function Skills() {
             <div
               key={skill.name}
               className={`flex items-center px-6 py-1 rounded-full border border-indigo-300 ${
-                skill.fillColor
-              } ${skill.color} ${
+                skill.color
+              } ${
                 skill.textColor
-              }  font-light shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 ${
+              } font-light shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 ${
                 isVisible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-12"
               }`}
               style={{ transitionDelay: `${(index + 1) * 100}ms` }}
             >
-              <img
-                src={skill.icon}
-                alt={skill.name}
-                className="w-4 h-4 mr-4 "
-              />
+              <img src={skill.icon} alt={skill.name} className="w-4 h-4 mr-4" />
               <span className="text-sm font-semibold">{skill.name}</span>
             </div>
           ))}
