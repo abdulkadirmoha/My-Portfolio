@@ -1,10 +1,7 @@
-Got it! Here's an updated, polished version of your README reflecting that there’s **no contact form** and mentioning your use of AI for prompts while emphasizing your own design input:
-
----
 
 # My Personal Portfolio
 
-Welcome to my personal portfolio website! This project showcases my skills, experience, and a selection of my best work in web development and design. It serves as a central hub for potential employers and collaborators to learn more about me.
+Welcome to my personal portfolio website! This project showcases my skills, experience, and a selection of my best work in web development and design.
 
 ---
 
