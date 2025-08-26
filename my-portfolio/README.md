@@ -1,76 +1,71 @@
-Got it! Here's an updated, polished version of your README reflecting that there’s **no contact form** and mentioning your use of AI for prompts while emphasizing your own design input:
+# My Personal Portfolio  
+
+This is my personal portfolio website — a space where I present my skills, background, and selected projects in **web development and design**.  
+It’s designed to serve as a central hub for potential employers, collaborators, and anyone interested in exploring my work.  
 
 ---
 
-# My Personal Portfolio
+## ✨ Features  
 
-Welcome to my personal portfolio website! This project showcases my skills, experience, and a selection of my best work in web development and design. It serves as a central hub for potential employers and collaborators to learn more about me.
-
----
-
-## Features
-
-* **Responsive Design**: Fully responsive layout optimized for all devices, from mobile phones to large desktop screens.
-* **Project Showcase**: Highlights both frontend development projects and web design work, with links to live sites and GitHub repositories.
-* **Skills Section**: Comprehensive overview of my technical skills and technologies I'm proficient in.
-* **Smooth Navigation**: Sticky header with a functional mobile menu for seamless site navigation.
-* **AI-Assisted Design**: Prompts from AI were used as inspiration, but the layout, styling, and final look were fully engineered and customized by me.
+* **Responsive Design**: Works smoothly on mobile, tablet, and desktop.  
+* **Project Showcase**: Highlights both frontend development and WordPress design projects with live demos and GitHub links.  
+* **Skills Section**: Clear overview of my technical expertise and tools.  
+* **Smooth Navigation**: Sticky header and mobile-friendly menu for easy browsing.  
+* **AI-Assisted Inspiration**: While AI prompts helped with brainstorming, the layout, styling, and final design are fully crafted and customized by me.  
 
 ---
 
-## Tech Stack
+## 🛠 Tech Stack  
 
-This website is built with:
-
-* **React** – JavaScript library for building user interfaces.
-* **Tailwind CSS** – Utility-first CSS framework for fast, responsive styling.
-* **Vite** – Build tool providing a fast and efficient development experience.
-* **Git & GitHub** – Version control and project hosting.
+* **React** – Component-based UI library.  
+* **Tailwind CSS** – Utility-first CSS framework.  
+* **Vite** – Fast development and build tool.  
+* **Git & GitHub** – Version control and hosting.  
 
 ---
 
-## Installation & Setup
+## ⚡ Installation & Setup  
 
-To run this project locally, follow these steps:
+To run this project locally:  
 
-1. **Clone the repository:**
-
+1. **Clone the repository**  
    ```bash
    git clone [your-repository-url]
-   ```
+````
 
-2. **Navigate to the project directory:**
+2. **Navigate to the project folder**
 
    ```bash
    cd my-portfolio
    ```
 
-3. **Install dependencies:**
+3. **Install dependencies**
 
    ```bash
    npm install
    ```
 
-4. **Start the development server:**
+4. **Start the development server**
 
    ```bash
    npm run dev
    ```
 
-The application will be available at `http://localhost:5173` (or another port if 5173 is in use).
+The app will run on `http://localhost:5173` (or another available port).
 
 ---
 
-## Contact
+## 📫 Contact
 
-Feel free to connect with me:
+Let’s connect!
 
-* **LinkedIn:** https://www.linkedin.com/in/abdulkadir-mohamed/
-* **Email:** abdulkadir.moha85@gmail.com
-* **Website:** https://abdulkadirmoha.github.io/My-Portfolio/
+* **LinkedIn:** [linkedin.com/in/abdulkadir-mohamed](https://www.linkedin.com/in/abdulkadir-mohamed/)
+* **Email:** [abdulkadir.moha85@gmail.com](mailto:abdulkadir.moha85@gmail.com)
+* **Website:** [abdulkadirmoha.github.io/My-Portfolio](https://abdulkadirmoha.github.io/My-Portfolio/)
 
 ---
 
-## License
+## 📜 License
 
 This project is licensed under the **MIT License**.
+

@@ -1,8 +1,30 @@
-import { useState } from "react";
+import { useState, useEffect } from "react"; // AI Generated: Added useEffect
 
 const Header = () => {
   // State to manage the mobile menu's open/closed state
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  // AI Generated: State to manage header background visibility on scroll
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // AI Generated: Effect to handle scroll behavior
+  useEffect(() => {
+    const handleScroll = () => {
+      // Set state to true if scroll position is greater than 50px
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    // Add scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []); // Empty dependency array ensures this effect runs only once
 
   /**
    * Handles mobile menu link clicks.
@@ -28,12 +50,24 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white backdrop-blur-sm border-b border-gray-200 shadow-sm">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        // AI Generated: Apply conditional styling based on scroll position
+        isScrolled
+          ? "bg-white backdrop-blur-sm border-b border-gray-200 shadow-sm"
+          : "bg-transparent backdrop-blur-sm border-b-2-gray-200 shadow-sm"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <a href="/">
-            <div className="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors duration-300">
+            <div
+              className={`text-xl font-bold transition-colors duration-300 ${
+                // AI Generated: Ensure logo text color is readable on transparent background
+                isScrolled ? "text-gray-900" : "text-gray-900"
+              }`}
+            >
               Abdulkadir Mohamed
             </div>
           </a>
@@ -42,31 +76,51 @@ const Header = () => {
           <nav className="hidden md:flex space-x-8">
             <a
               href="#about"
-              className="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium"
+              className={`font-medium transition-colors duration-300 ${
+                isScrolled
+                  ? "text-gray-700 hover:text-blue-600"
+                  : "text-white-700 hover:text-blue-600"
+              }`} // AI Generated: Changed text color for transparent background
             >
               About
             </a>
             <a
               href="#frontend-projects"
-              className="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium"
+              className={`font-medium transition-colors duration-300 ${
+                isScrolled
+                  ? "text-gray-700 hover:text-blue-600"
+                  : "text-white-700 hover:text-blue-600"
+              }`} // AI Generated: Changed text color for transparent background
             >
               Projects
             </a>
             <a
               href="#web-projects"
-              className="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium"
+              className={`font-medium transition-colors duration-300 ${
+                isScrolled
+                  ? "text-gray-700 hover:text-blue-600"
+                  : "text-white-700 hover:text-blue-600"
+              }`} // AI Generated: Changed text color for transparent background
             >
               Web Design
             </a>
             <a
               href="#skills"
-              className="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium"
+              className={`font-medium transition-colors duration-300 ${
+                isScrolled
+                  ? "text-gray-700 hover:text-blue-600"
+                  : "text-white-700 hover:text-blue-600"
+              }`} // AI Generated: Changed text color for transparent background
             >
               Skills
             </a>
             <a
               href="#contact"
-              className="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium"
+              className={`font-medium transition-colors duration-300 ${
+                isScrolled
+                  ? "text-gray-700 hover:text-blue-600"
+                  : "text-white-700 hover:text-blue-600"
+              }`} // AI Generated: Changed text color for transparent background
             >
               Contact
             </a>
@@ -76,7 +130,11 @@ const Header = () => {
           <div className="md:hidden">
             <button
               onClick={handleMenuToggle}
-              className="text-gray-700 hover:text-blue-600 transition-colors duration-300"
+              className={`transition-colors duration-300 ${
+                isScrolled
+                  ? "text-gray-700 hover:text-blue-600"
+                  : "text-white-700 hover:text-blue-600"
+              }`} // AI Generated: Changed icon color for transparent background
             >
               {isMenuOpen ? (
                 // Close Icon (X)
@@ -116,7 +174,12 @@ const Header = () => {
 
       {/* Mobile menu content, conditionally rendered */}
       <div
-        className={`md:hidden absolute top-16 left-0 right-0 bg-white border-b border-gray-200 shadow-lg transition-all duration-300 ease-in-out transform ${
+        className={`md:hidden absolute top-16 left-0 right-0 border-b border-gray-200 shadow-lg transition-all duration-300 ease-in-out transform ${
+          // AI Generated: Apply conditional background to mobile menu
+          isScrolled
+            ? "bg-white"
+            : "bg-gradient-to-br from-blue-50 to-indigo-100 shadow-sm shadow-white"
+        } ${
           isMenuOpen
             ? "translate-y-0 opacity-100"
             : "-translate-y-full opacity-0 pointer-events-none"
