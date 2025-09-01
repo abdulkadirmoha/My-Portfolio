@@ -1,9 +1,9 @@
-# Node package files
+# dependencies
+node_modules/
 package-lock.json
-package.json
 
-# VS Code settings
+# editor
 .vscode/
 
-# Mac system files
+# macOS system
 .DS_Store
