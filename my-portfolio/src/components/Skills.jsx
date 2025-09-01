@@ -21,46 +21,47 @@ function Skills() {
     return () => observer.disconnect();
   }, []);
 
+  // The paths below are already correct because the "images" folder is now in the "public" directory.
   const skills = [
     {
       name: "WordPress",
-      icon: "/images/wordpress-logo.png",
+      icon: `${import.meta.env.BASE_URL}images/wordpress-logo.png`,
       color: "bg-indigo-50",
       textColor: "text-indigo-700",
     },
     {
       name: "Elementor",
-      icon: "/images/elementor.png",
+      icon: `${import.meta.env.BASE_URL}images/elementor.png`,
       color: "bg-purple-400",
       textColor: "text-indigo-900",
     },
     {
       name: "HTML",
-      icon: "/images/html.png",
+      icon: `${import.meta.env.BASE_URL}images/html.png`,
       color: "bg-orange-600",
       textColor: "text-black",
     },
     {
       name: "CSS",
-      icon: "/images/css-3.png",
+      icon: `${import.meta.env.BASE_URL}images/css-3.png`,
       color: "bg-blue-600",
       textColor: "text-white",
     },
     {
       name: "JavaScript",
-      icon: "/images/javascript-logo.png",
+      icon: `${import.meta.env.BASE_URL}images/javascript-logo.png`,
       color: "bg-yellow-500",
       textColor: "text-black",
     },
     {
       name: "Tailwind",
-      icon: "/images/tailwindcss.png",
+      icon: `${import.meta.env.BASE_URL}images/tailwindcss.png`,
       color: "bg-blue-700",
       textColor: "text-white",
     },
     {
       name: "React",
-      icon: "/images/react.png",
+      icon: `${import.meta.env.BASE_URL}images/react.png`,
       color: "bg-indigo-900",
       textColor: "text-white",
     },

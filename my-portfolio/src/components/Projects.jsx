@@ -1,18 +1,23 @@
 import { useEffect, useState, useRef } from "react";
 // Reverting back to original local image imports as requested
-import sbrLogo from "../images/sbrLogo.png";
-import smartStartLogo from "../images/smartStart-logo.png";
-import FengLogo from "../images/feng.png";
-import restaurantImage from "../images/untitled.png";
-import instagramCloneImage from "../images/instagramClone.png";
-import travelJournalImage from "../images/travelJournal.png";
-import myPotfolio from "../images/portfolio.png";
-import chromeExtension from "../images/chromeExtension.png";
+import sbrLogo from "/images/sbrLogo.png";
+import smartStartLogo from "/images/smartStart-logo.png";
+import FengLogo from "/images/feng.png";
+import restaurantImage from "/images/untitled.png";
+import instagramCloneImage from "/images/instagramClone.png";
+import travelJournalImage from "/images/travelJournal.png";
+import myPotfolio from "/images/portfolio.png";
+import chromeExtension from "/images/chromeExtension.png";
 
 function Projects() {
-  const [isVisible, setIsVisible] = useState(false);
+  // State to control the visibility of the sections
+  const [isDesignVisible, setIsDesignVisible] = useState(false);
+  const [isFrontendVisible, setIsFrontendVisible] = useState(false);
+
+  // State and refs for the carousel
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
-  const sectionRef = useRef(null);
+  const designSectionRef = useRef(null);
+  const frontendSectionRef = useRef(null);
   const carouselRef = useRef(null);
   const isScrollingRef = useRef(false);
 
@@ -96,12 +101,19 @@ function Projects() {
     },
   ];
 
-  // IntersectionObserver for fade-in effect
+  // IntersectionObserver for fade-in effect on both sections
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
+        if (entry.target === designSectionRef.current) {
+          if (entry.isIntersecting) {
+            setIsDesignVisible(true);
+          }
+        }
+        if (entry.target === frontendSectionRef.current) {
+          if (entry.isIntersecting) {
+            setIsFrontendVisible(true);
+          }
         }
       },
       {
@@ -110,13 +122,19 @@ function Projects() {
       }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    if (designSectionRef.current) {
+      observer.observe(designSectionRef.current);
+    }
+    if (frontendSectionRef.current) {
+      observer.observe(frontendSectionRef.current);
     }
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+      if (designSectionRef.current) {
+        observer.unobserve(designSectionRef.current);
+      }
+      if (frontendSectionRef.current) {
+        observer.unobserve(frontendSectionRef.current);
       }
     };
   }, []);
@@ -189,8 +207,15 @@ function Projects() {
     techStack,
     imageSrc,
     githubLink,
+    isVisible,
+    delay,
   }) => (
-    <div className="bg-white border-2 border-slate-100 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-700 transform overflow-hidden group snap-center flex-shrink-0 w-[95%] md:w-[48%] lg:w-[32%] my-4">
+    <div
+      className={`bg-white border-2 border-slate-100 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-700 transform overflow-hidden group snap-center flex-shrink-0 w-[95%] md:w-[48%] lg:w-[32%] my-4 ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+      }`}
+      style={{ transitionDelay: `${delay}ms` }}
+    >
       <div className="relative overflow-hidden h-48">
         <img
           src={imageSrc}
@@ -237,11 +262,14 @@ function Projects() {
     techStack,
     imageSrc,
     viewLink,
+    isVisible,
+    delay,
   }) => (
     <div
       className={`bg-white border-2 border-slate-200 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-700 transform overflow-hidden group relative ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
       }`}
+      style={{ transitionDelay: `${delay}ms` }}
     >
       <img
         src={imageSrc}
@@ -280,12 +308,17 @@ function Projects() {
   return (
     <div className="bg-slate-50 border-t border-gray-200">
       {/* Moved the design projects section to the top */}
-      <section id="web-projects" className="max-w-6xl mx-auto pt-20 pb-16 px-4">
+      <section
+        ref={designSectionRef}
+        id="web-projects"
+        className="max-w-6xl mx-auto pt-20 pb-16 px-4"
+      >
         <h2
           className={`text-3xl font-bold text-center mb-12 transition-all duration-1000 transform ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            isDesignVisible
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-8"
           }`}
-          style={{ transitionDelay: "1000ms" }}
         >
           Design Projects
         </h2>
@@ -294,18 +327,24 @@ function Projects() {
             <DesignProjectCard
               key={index}
               {...project}
-              delay={1200 + index * 200}
+              isVisible={isDesignVisible}
+              delay={index * 200}
             />
           ))}
         </div>
       </section>
 
       {/* Moved the frontend projects section to the bottom */}
-      <section ref={sectionRef} className="max-w-6xl mx-auto pb-10 px-4">
+      <section
+        ref={frontendSectionRef}
+        className="max-w-6xl mx-auto pb-10 px-4"
+      >
         <h2
           id="frontend-projects"
           className={`text-3xl font-bold text-center mb-12 transition-all duration-1000 transform ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            isFrontendVisible
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-8"
           }`}
         >
           Frontend Projects
@@ -317,7 +356,12 @@ function Projects() {
           >
             {/* Create a duplicated list for the infinite loop effect */}
             {frontendProjects.concat(frontendProjects).map((project, index) => (
-              <CodeProjectCard key={index} {...project} />
+              <CodeProjectCard
+                key={index}
+                {...project}
+                isVisible={isFrontendVisible}
+                delay={index * 200}
+              />
             ))}
           </div>
 

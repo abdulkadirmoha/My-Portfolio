@@ -61,7 +61,7 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <a href="/">
+    
             <div
               className={`text-xl font-bold transition-colors duration-300 ${
                 // AI Generated: Ensure logo text color is readable on transparent background
@@ -70,7 +70,6 @@ const Header = () => {
             >
               Abdulkadir Mohamed
             </div>
-          </a>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">

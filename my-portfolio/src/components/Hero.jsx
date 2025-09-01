@@ -1,5 +1,5 @@
-import { useEffect, useState, useRef } from 'react';
-import profileImage from '../images/photo.jpeg';
+import { useEffect, useState, useRef } from "react";
+import profilePhoto from "/images/photo.jpeg"
 import resume from "../assets/resume.pdf"
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -14,7 +14,7 @@ const Hero = () => {
       },
       {
         threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        rootMargin: "0px 0px -50px 0px",
       }
     );
 
@@ -148,22 +148,22 @@ const Hero = () => {
               >
                 <a
                   href={resume}
-                  download="Abdulkadir_Resume.pdf"
-                  className="inline-flex items-center justify-center px-6 py-2 bg-slate-800 hover:bg-transparent text-slate-100 hover:text-slate-800 border border-slate-600 font-semibold rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl whitespace-nowrap"
+                  download="abdulkadir_resume.pdf"
+                  className="inline-flex items-center justify-center py-2 px-4 bg-slate-800 hover:bg-transparent text-slate-100 hover:text-slate-800 border border-slate-600 font-semibold rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl whitespace-nowrap text-sm"
                 >
                   Resume
                 </a>
                 <a
                   href="#frontend-projects"
-                  className="inline-flex items-center justify-center px-6 py-2 bg-transparent border border-slate-800 hover:bg-slate-700 text-slate-800 hover:text-white font-semibold rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl whitespace-nowrap"
+                  className="inline-flex items-center justify-center py-2 px-6 bg-transparent border border-slate-800 hover:bg-slate-700 text-slate-800 hover:text-white font-semibold rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl whitespace-nowrap text-sm"
                 >
-                  Frontent Projects
+                  Frontend Projects
                 </a>
                 <a
                   href="#web-projects"
-                  className="inline-flex items-center justify-center px-6 py-2 bg-transparent border border-slate-800 hover:bg-slate-700 text-slate-800 hover:text-white font-semibold rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl whitespace-nowrap"
+                  className="inline-flex items-center justify-center py-2 px-6 bg-transparent border border-slate-800 hover:bg-slate-700 text-slate-800 hover:text-white font-semibold rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl whitespace-nowrap text-sm"
                 >
-                  Desing Projects
+                  Design Projects
                 </a>
               </div>
             </div>
@@ -180,7 +180,7 @@ const Hero = () => {
               <div className="relative">
                 <div className="w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden ring-4 ring-blue-200 shadow-2xl">
                   <img
-                    src={profileImage}
+                    src={profilePhoto}
                     alt="Abdulkadir Mohamed"
                     className="w-full h-full object-cover"
                   />
@@ -218,9 +218,8 @@ const Hero = () => {
             I have a bachelor's degree in{" "}
             <span className="font-semibold">Computer Science</span> and over{" "}
             <span className="font-semibold">
-              {" "}
               5 years of experience with WordPress
-            </span>
+            </span>{" "}
             , building professional websites for businesses and NGOs. I've been
             living in{" "}
             <span className="font-semibold">Finland for 2 years </span>and I'm
@@ -233,6 +232,12 @@ const Hero = () => {
           </p>
         </div>
       </section>
+      {/* You'll also need to add sections with these IDs for the other links to work:
+        <section id="js-projects">...</section>
+        <section id="wp-projects">...</section>
+        <section id="skills">...</section>
+        <section id="contact">...</section>
+      */}
     </>
   );
 };
